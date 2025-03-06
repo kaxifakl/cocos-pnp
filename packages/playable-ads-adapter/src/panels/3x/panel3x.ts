@@ -53,6 +53,11 @@ export async function ready(options: ITaskOptions) {
  * @returns
  */
 export async function update(options: ITaskOptions, key: string) {
+    if (!key) {
+        init();
+        return;
+    }
+
     try {
         await saveConfigToFile(options);
 
@@ -63,11 +68,6 @@ export async function update(options: ITaskOptions, key: string) {
         }
     } catch (err: any) {
         console.error('配置文件更新失败:', err.message);
-    }
-
-    if (!key) {
-        init();
-        return;
     }
 }
 
