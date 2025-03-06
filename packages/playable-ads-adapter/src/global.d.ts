@@ -473,11 +473,14 @@ type TAdapterRC = {
   skipBuild?: boolean
   orientation?: TWebOrientations
   exportChannels?: TChannel[]
+  enableSplash?: boolean
   injectOptions?: {
     [key in TChannel]: TChannelRC
   }
   tinify?: boolean
   tinifyApiKey?: string
+  isZip?: boolean
+
 }
 
 type TResourceData = { [key: string]: string }
